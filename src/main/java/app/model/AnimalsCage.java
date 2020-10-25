@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AnimalsCage {
+public class AnimalsCage extends Timer {
 
     @Autowired
     @Qualifier("dog")
@@ -13,6 +13,10 @@ public class AnimalsCage {
 
     @Autowired
     private Timer timer;
+
+    public Timer getTimer() {
+        return this.timer;
+    }
 
     public void whatAnimalSay() {
         System.out.println("Say:");
